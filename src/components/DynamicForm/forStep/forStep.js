@@ -12,24 +12,22 @@ import Resume from "../Resume";
 import Select from "react-select";
 
 const options=[
-    {id:1, value:"football", label:"Football ⚽"},
-    {id:2, value:"computer", label:"Computer 💻"},
-    {id:3, value:"play", label:"Play 🎮"},
-    {id:4, value:"music", label:"Music 🎼"},
-    {id:5, value:"photo", label:"Photo 📷"},
-    {id:6, value:"swim", label:"Swim 🥽"},
-    {id:7, value:"run", label:"Run 👟"},
+    {id:1, value:"Vallenato", label:"Vallenato ⚽"},
+    {id:2, value:"Rock", label:"Rock 💻"},
+    {id:3, value:"pop", label:"pop 🎮"},
+    {id:4, value:"rap", label:"rap 🎼"},
+    {id:5, value:"piano", label:"piano 📷"},
 ];
 
 export default function ForStep({setStep}) {
     const [selectOption, setSelectOption]=useState(null);
     const hobbiesSer= JSON.stringify(selectOption);
-    localStorage.setItem("hobbies", hobbiesSer);
+    localStorage.setItem("music", hobbiesSer);
 
     const [modal, setModal]= useState(false);
     const onChangeComment = (e) =>{
         const comment= e.target.value;
-        localStorage.setItem("comment", comment);
+        localStorage.setItem("music", comment);
     };
     return(
         <div>
@@ -38,7 +36,7 @@ export default function ForStep({setStep}) {
             <Container className="p-5 text-center">
             <Row className="justify-content-md-center">
                     <Col lg="7">
-                        <h5 className="mb-4">Select your hobbies</h5>
+                        <h5 className="mb-4">Select your music para programar</h5>
                         <Select 
                             defaultValue={selectOption}
                             onChange={setSelectOption}

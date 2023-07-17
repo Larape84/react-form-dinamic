@@ -7,6 +7,7 @@ export default function Resume({showModal, setModal, setStep}) {
     const hobbiesStorage=JSON.parse(localStorage.getItem('hobbies'));
     const addiotionalHobbie = localStorage.getItem('additionalHobbie');
     const comment = localStorage.getItem('comment');
+    const music = JSON.parse(localStorage.getItem('music'));
 
     const clearForm = () =>{
         localStorage.clear();
@@ -42,6 +43,14 @@ export default function Resume({showModal, setModal, setStep}) {
                             hobbiesStorage={hobbiesStorage}
                         />
                     )}
+                    {music &&(
+                        <CardResume 
+                            subtitle="Your music"
+                            text={'Music'}
+                            music={music}
+                        />
+                    )}
+
                     {comment && (
                         <CardResume
                             subtitle="And for the last this is the comment"
